@@ -5,6 +5,7 @@ class FortunetellingsController < ApplicationController
     birthday  # Commonモジュールからメソッドを呼び出す
     zodiac_sign  # Commonモジュールからメソッドを呼び出す
     age  # Commonモジュールからメソッドを呼び出す
+    fortune  #Commonモジュールからメソッドを呼び出す
   end
 
 end

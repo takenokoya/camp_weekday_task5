@@ -33,4 +33,10 @@ module Common
   def age
     @age = (Date.today.strftime("%Y%m%d").to_i - @birthday.to_i) / 10000
   end
+
+  # Commonモジュールにfortuneメソッドを定義
+  def fortune
+    fortunes = ["大吉", "中吉", "吉", "小吉", "凶", "大凶"]
+    @fortune = fortunes.shuffle![0]
+  end
 end
