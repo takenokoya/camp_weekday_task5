@@ -4,6 +4,7 @@ class FortunetellingsController < ApplicationController
   def show
     birthday  # Commonモジュールからメソッドを呼び出す
     zodiac_sign  # Commonモジュールからメソッドを呼び出す
+    age  # Commonモジュールからメソッドを呼び出す
   end
 
 end

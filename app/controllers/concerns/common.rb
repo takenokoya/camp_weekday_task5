@@ -9,7 +9,7 @@ module Common
     @day = @birthday[6, 2].to_i  # 8桁の文字列の最後の2桁を数値にして@dayに代入
     @monthday = @birthday[4, 4].to_i  # 8桁の文字列の下4桁を数値にして@monthdayに代入
   end
-  
+
     # Commonモジュールにzodiac_signメソッドを定義
   def zodiac_sign
     @zodiac_sign = case @monthday  # case文を用いて@monthdayに格納されている数値をもとに異なる処理を実施
@@ -29,4 +29,8 @@ module Common
                    end
   end
 
+  # Commonモジュールにageメソッドを定義
+  def age
+    @age = (Date.today.strftime("%Y%m%d").to_i - @birthday.to_i) / 10000
+  end
 end
