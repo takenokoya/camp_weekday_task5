@@ -1,7 +1,7 @@
 module Common
   extend ActiveSupport::Concern
 
-  # Commonモジュールにbirthdayを定義(リファクタリング)
+  # Commonモジュールにbirthdayメソッドを定義(リファクタリング)
   def birthday
     @birthday = params[:birthday]
     @year = @birthday[0, 4].to_i  # 8桁の文字列のはじめの4桁を数値にして@yearに代入

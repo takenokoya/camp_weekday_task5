@@ -1,6 +1,6 @@
 <p>
   <%= "あなたの誕生日は#{@year}年#{@month}月#{@day}日です。" %>
-  <!-- 今日の日付(mmdd)を数値に変換した上で@montudayと比較 -->
+  <!-- 今日の日付(mmdd)を数値に変換した上で@monthdayと比較 -->
   <% if @monthday == Date.today.strftime("%m%d").to_i %>
     <%= "今日があなたの誕生日です。" %>
   <% end %>
