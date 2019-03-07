@@ -4,15 +4,19 @@ module Common
   # Commonモジュールにbirthdayメソッドを定義(リファクタリング)
   def birthday
     @birthday = params[:birthday]
-    @year = @birthday[0, 4].to_i  # 8桁の文字列のはじめの4桁を数値にして@yearに代入
-    @month = @birthday[4, 2].to_i  # 8桁の文字列の次の2桁を数値にして@monthに代入
-    @day = @birthday[6, 2].to_i  # 8桁の文字列の最後の2桁を数値にして@dayに代入
-    @monthday = @birthday[4, 4].to_i  # 8桁の文字列の下4桁を数値にして@monthdayに代入
+    @year = @birthday[0, 4]  # 8桁の文字列のはじめの4桁を@yearに代入
+    @month = @birthday[4, 2]  # 8桁の文字列の次の2桁を@monthに代入
+    @day = @birthday[6, 2]  # 8桁の文字列の最後の2桁を@dayに代入
+    @monthday = @birthday[4, 4]  # 8桁の文字列の下4桁を@monthdayに代入
+    # 今日が誕生日か判別
+    if @monthday.to_i == Date.today.strftime("%m%d").to_i
+      @your_birthday = "今日があなたの誕生日です。"
+    end
   end
 
     # Commonモジュールにzodiac_signメソッドを定義
   def zodiac_sign
-    @zodiac_sign = case @monthday  # case文を用いて@monthdayに格納されている数値をもとに異なる処理を実施
+    @zodiac_sign = case @monthday.to_i  # @monthdayに格納された文字列を数値化してcase文でパターンマッチング
                    when (101..119) then "山羊座"
                    when (120..218) then "水瓶座"
                    when (219..320) then "魚座"
