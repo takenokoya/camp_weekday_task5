@@ -1,1 +1,7 @@
-<p><%= "あなたの誕生日は#{@year}年#{@month}月#{@day}日です。" %></p>
+<p>
+  <%= "あなたの誕生日は#{@year}年#{@month}月#{@day}日です。" %>
+  <!-- 変数@birthdayの下4桁と今日の日付(mmdd)を、数値に変換した上で比較 -->
+  <% if @birthday[4,4].to_i == Date.today.strftime("%m%d").to_i %>
+    <%= "今日があなたの誕生日です。" %>
+  <% end %>
+</p>
